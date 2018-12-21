@@ -2,7 +2,7 @@
 .idea
 .idea_modules/
 .gradle
-/build/
+build/
 out/
 gradle-app.setting
 .gradletasknamecache
