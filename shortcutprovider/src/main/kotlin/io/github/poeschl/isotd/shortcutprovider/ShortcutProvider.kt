@@ -17,12 +17,13 @@ fun main(args: Array<String>) {
 
 class ShortcutProvider @Inject constructor(
     private val parser: ShortcutParser,
-    @Named("keymap") private val keymapFilePath: String
+    @Named("keymap") private val keymapFilePath: String,
+    private val random: Random
 ) {
 
     fun getRandomShortcut(): Shortcut {
-        val shortcutList = parser.parse(File(keymapFilePath))
-        val randomIndex = Random.nextInt(shortcutList.size)
+        val shortcutList = parser.parse(File(keymapFilePath).bufferedReader())
+        val randomIndex = random.nextInt(shortcutList.size)
 
         return shortcutList[randomIndex]
     }

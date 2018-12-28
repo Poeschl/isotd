@@ -8,6 +8,7 @@ import io.github.poeschl.isotd.shortcutprovider.ShortcutProvider
 import org.apache.commons.csv.CSVFormat
 import javax.inject.Named
 import javax.inject.Singleton
+import kotlin.random.Random
 
 
 @Singleton
@@ -42,4 +43,8 @@ internal class ProviderModule {
     @Provides
     @Singleton
     fun provideShortcutParser(csvFormat: CSVFormat) = ShortcutParser(csvFormat)
+
+    @Provides
+    @Singleton
+    fun provideRandom(): Random = Random
 }
