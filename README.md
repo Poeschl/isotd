@@ -5,4 +5,4 @@ This is the home of Isotd ("Intellij Shortcurt of the day"), it gives you a rand
 Upcoming:
 * ~~Get Shortcuts and parse them~~
 * Run as Rest-Interface
-* Run on cli
+* ~~Run on cli~~

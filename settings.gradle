@@ -1,3 +1,4 @@
 rootProject.name = 'isotd'
 include 'shortcutprovider'
+include 'cliInterface'
 
