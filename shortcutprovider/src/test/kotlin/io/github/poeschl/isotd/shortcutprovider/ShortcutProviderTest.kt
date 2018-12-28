@@ -16,7 +16,7 @@ internal class ShortcutProviderTest {
         //WHEN
         val mockShortCutParser: ShortcutParser = mock()
         val shortCutList = listOf(Shortcut("test", "testinfo", "A"))
-        val path = ProviderModule::class.java.classLoader.getResource("idea-shortcuts.csv").path
+        val path = ProviderModule::class.java.classLoader.getResource("idea-shortcuts.csv")
         val mockRandom: Random = mock()
 
         whenever(mockShortCutParser.parse(any())).thenReturn(shortCutList)

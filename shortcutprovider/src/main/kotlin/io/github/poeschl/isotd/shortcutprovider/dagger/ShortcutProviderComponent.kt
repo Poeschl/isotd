@@ -38,7 +38,7 @@ internal class ProviderModule {
     @Provides
     @Singleton
     @Named("keymap")
-    fun provideKeyMapCsvPath() = ProviderModule::class.java.classLoader.getResource("idea-shortcuts.csv").path
+    fun provideKeyMapCsvPath() = ProviderModule::class.java.classLoader.getResource("idea-shortcuts.csv")
 
     @Provides
     @Singleton

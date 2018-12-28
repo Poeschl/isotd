@@ -19,7 +19,7 @@ class ShortcutParser constructor(private val csvFormat: CSVFormat) {
         val records = csvFormat.parse(reader).records
         val shortcuts = records.map { Shortcut(it[0], it[1], it[2]) }
 
-        LOGGER.info("Parsed ${shortcuts.size} records")
+        LOGGER.debug("Parsed ${shortcuts.size} records")
 
         return shortcuts
     }
