@@ -2,6 +2,8 @@ plugins {
     id 'com.github.johnrengelman.shadow' version '4.0.3'
 }
 
+apply plugin: 'org.jetbrains.kotlin.kapt'
+
 jar {
     manifest {
         attributes 'Main-Class': 'io.github.poeschl.isotd.rest.ApplicationKt'
@@ -20,6 +22,4 @@ dependencies {
     compile project(':shortcutprovider')
     compile 'io.ktor:ktor-server-jetty:1.1.1'
     compile 'com.github.salomonbrys.kotson:kotson:2.5.0'
-
-    testCompile "io.mockk:mockk:1.8.13.kotlin13"
 }

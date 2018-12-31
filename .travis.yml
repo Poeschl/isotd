@@ -16,4 +16,4 @@ install:
   - chmod +x gradlew
 
 script:
-  - ./gradlew -PopenClassesForTest check
+  - ./gradlew check

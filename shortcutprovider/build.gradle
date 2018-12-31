@@ -1,3 +1,5 @@
+apply plugin: 'org.jetbrains.kotlin.kapt'
+
 dependencies {
     compile 'org.apache.commons:commons-csv:1.6'
 }

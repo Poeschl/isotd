@@ -1,10 +1,9 @@
 package io.github.poeschl.isotd.shortcutprovider
 
-import com.nhaarman.mockitokotlin2.any
-import com.nhaarman.mockitokotlin2.mock
-import com.nhaarman.mockitokotlin2.whenever
 import io.github.poeschl.isotd.shortcutprovider.dagger.ProviderModule
 import io.github.poeschl.isotd.shortcutprovider.models.Shortcut
+import io.mockk.every
+import io.mockk.mockk
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import kotlin.random.Random
@@ -14,13 +13,13 @@ internal class ShortcutProviderTest {
     @Test
     fun getRandomShortcut() {
         //WHEN
-        val mockShortCutParser: ShortcutParser = mock()
+        val mockShortCutParser: ShortcutParser = mockk()
         val shortCutList = listOf(Shortcut("test", "testinfo", "A"))
         val path = ProviderModule::class.java.classLoader.getResource("idea-shortcuts.csv")
-        val mockRandom: Random = mock()
+        val mockRandom: Random = mockk()
 
-        whenever(mockShortCutParser.parse(any())).thenReturn(shortCutList)
-        whenever(mockRandom.nextInt(1)).thenReturn(0)
+        every { mockShortCutParser.parse(any()) } returns shortCutList
+        every { mockRandom.nextInt(1) } returns 0
 
         val provider = ShortcutProvider(mockShortCutParser, path, mockRandom)
 

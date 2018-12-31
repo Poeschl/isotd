@@ -1,13 +1,11 @@
 package io.github.poeschl.isotd.shortcutprovider
 
-import io.github.poeschl.isotd.shortcutprovider.models.Mockable
 import io.github.poeschl.isotd.shortcutprovider.models.Shortcut
 import org.apache.commons.csv.CSVFormat
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import java.io.Reader
 
-@Mockable
 class ShortcutParser constructor(private val csvFormat: CSVFormat) {
 
     companion object {
