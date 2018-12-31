@@ -1,6 +1,7 @@
 package io.github.poeschl.isotd.shortcutprovider
 
 import io.github.poeschl.isotd.shortcutprovider.dagger.ShortcutProviderComponent
+import io.github.poeschl.isotd.shortcutprovider.models.Mockable
 import io.github.poeschl.isotd.shortcutprovider.models.Shortcut
 import java.net.URL
 import javax.inject.Inject
@@ -15,6 +16,7 @@ fun main(args: Array<String>) {
 
 }
 
+@Mockable
 class ShortcutProvider @Inject constructor(
     private val parser: ShortcutParser,
     @Named("keymap") private val keyMapURL: URL,
