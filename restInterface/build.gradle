@@ -1,0 +1,22 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '4.0.3'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'io.github.poeschl.isotd.rest.ApplicationKt'
+    }
+}
+
+import com.github.jengelman.gradle.plugins.shadow.transformers.ServiceFileTransformer
+shadowJar {
+    transform(ServiceFileTransformer) {
+        path = 'META-INF/services'
+        include 'org.eclipse.jetty.http.HttpFieldPreEncoder'
+    }
+}
+
+dependencies {
+    compile project(':shortcutprovider')
+    compile 'io.ktor:ktor-server-jetty:1.1.1'
+}
